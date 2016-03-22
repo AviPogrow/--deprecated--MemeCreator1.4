@@ -89,8 +89,8 @@ class SentMemesTableViewController: UITableViewController {
 							Meme
 	
 		
-		cell.memedImageView.image = UIImage(named: meme.imageName!)
-		//cell.memedImageView.image = meme.fetchCompositeImage
+		//cell.memedImageView.image = UIImage(named: meme.imageName!)
+		cell.memedImageView.image = meme.fetchCompositeImage
 		
 		return cell
     }

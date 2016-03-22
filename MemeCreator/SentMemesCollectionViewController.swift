@@ -159,9 +159,9 @@ class SentMemesCollectionViewController: UIViewController,
 		let meme = fetchedResultsController.objectAtIndexPath(indexPath) as!
 							Meme
 		//set the image
-		//cell.memedImageView.image = meme.fetchCompositeImage
+		cell.memedImageView.image = meme.fetchCompositeImage
 		
-		cell.memedImageView.image = UIImage(named: meme.imageName!)    
+		//cell.memedImageView.image = UIImage(named: meme.imageName!)
 		return cell
     }
 
