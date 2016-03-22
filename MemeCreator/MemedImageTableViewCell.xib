@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemedImageTableViewCell" rowHeight="345" id="0Ak-Vb-WQE" customClass="MemedImageTableViewCell" customModule="MemeCreator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="322" height="322"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0Ak-Vb-WQE" id="4KQ-gj-vWu">
+                <rect key="frame" x="0.0" y="0.0" width="322" height="321"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tatty-Kinder-Passaic2" translatesAutoresizingMaskIntoConstraints="NO" id="cgS-sH-HL6">
+                        <rect key="frame" x="11" y="11" width="300" height="300"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cgS-sH-HL6" firstAttribute="centerY" secondItem="4KQ-gj-vWu" secondAttribute="centerY" id="IHE-ij-2vG"/>
+                    <constraint firstItem="cgS-sH-HL6" firstAttribute="leading" secondItem="4KQ-gj-vWu" secondAttribute="leading" constant="2" id="aYR-wF-zuj"/>
+                    <constraint firstItem="cgS-sH-HL6" firstAttribute="centerX" secondItem="4KQ-gj-vWu" secondAttribute="centerX" id="bXR-P1-a0L"/>
+                    <constraint firstItem="cgS-sH-HL6" firstAttribute="top" secondItem="4KQ-gj-vWu" secondAttribute="topMargin" constant="3" id="dVA-7t-eLN"/>
+                    <constraint firstItem="cgS-sH-HL6" firstAttribute="top" secondItem="4KQ-gj-vWu" secondAttribute="top" constant="2" id="gy1-BN-5Od"/>
+                    <constraint firstItem="cgS-sH-HL6" firstAttribute="leading" secondItem="4KQ-gj-vWu" secondAttribute="leadingMargin" constant="3" id="oh1-ab-NgC"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="aYR-wF-zuj"/>
+                        <exclude reference="gy1-BN-5Od"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.52995885369999995" green="1" blue="0.24927624549999999" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="memedImageView" destination="cgS-sH-HL6" id="aK2-YU-J1N"/>
+            </connections>
+            <point key="canvasLocation" x="594" y="326"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Tatty-Kinder-Passaic2" width="2203" height="2174"/>
+    </resources>
+</document>
