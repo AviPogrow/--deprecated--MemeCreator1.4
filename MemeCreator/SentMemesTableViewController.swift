@@ -88,13 +88,16 @@ class SentMemesTableViewController: UITableViewController {
 		let meme = fetchedResultsController.objectAtIndexPath(indexPath) as!
 							Meme
 	
+		if meme.imageName != nil {
+		cell.memedImageView.image = UIImage(named: meme.imageName!)
 		
-		//cell.memedImageView.image = UIImage(named: meme.imageName!)
+		} else {
 		cell.memedImageView.image = meme.fetchCompositeImage
+		}
 		
 		return cell
-    }
-	
+			
+	}
 	//MARK: - Table view delegate methods
 	 override func tableView(tableView: UITableView,
 	  commitEditingStyle editingStyle: UITableViewCellEditingStyle,

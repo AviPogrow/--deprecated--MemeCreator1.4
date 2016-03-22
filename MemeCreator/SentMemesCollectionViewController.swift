@@ -158,12 +158,16 @@ class SentMemesCollectionViewController: UIViewController,
 		//use the meme object to set the various view objects in the tableView cell
 		let meme = fetchedResultsController.objectAtIndexPath(indexPath) as!
 							Meme
-		//set the image
-		cell.memedImageView.image = meme.fetchCompositeImage
+			if meme.imageName != nil {
+		cell.memedImageView.image = UIImage(named: meme.imageName!)
 		
-		//cell.memedImageView.image = UIImage(named: meme.imageName!)
+		} else {
+		cell.memedImageView.image = meme.fetchCompositeImage
+		}
+		
 		return cell
-    }
+			
+	}
 
 	func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
