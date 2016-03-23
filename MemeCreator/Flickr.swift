@@ -28,8 +28,7 @@ class Flickr: NSObject {
 	var searchPhrase:String?
 	var pageToFetch:Int?
 	
-	
-  	typealias CompletionHandler = (result: AnyObject!, error: NSError?) -> Void
+	typealias CompletionHandler = (result: AnyObject!, error: NSError?) -> Void
   
   	var session:NSURLSession
   

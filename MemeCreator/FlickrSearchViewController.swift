@@ -23,8 +23,6 @@ override func viewDidLoad() {
 }
 
 
-
-
 }
 //handle user input in search box
 extension FlickrSearchViewController: UISearchBarDelegate {
@@ -36,6 +34,9 @@ extension FlickrSearchViewController: UISearchBarDelegate {
 		}
 	
 	tableView.reloadData()
+	}
+   func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+	return .TopAttached
 	}
 }
 extension FlickrSearchViewController: UITableViewDataSource {
