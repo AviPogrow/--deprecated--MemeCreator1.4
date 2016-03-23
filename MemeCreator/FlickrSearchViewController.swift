@@ -26,7 +26,7 @@ override func viewDidLoad() {
 
 
 }
-
+//handle user input in search box
 extension FlickrSearchViewController: UISearchBarDelegate {
 	func searchBarSearchButtonClicked(searchBar: UISearchBar) {
 		searchResults = [String]()
