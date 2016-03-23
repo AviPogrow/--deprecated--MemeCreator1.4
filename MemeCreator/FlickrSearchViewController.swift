@@ -14,7 +14,7 @@ class FlickrSearchViewController : UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
 	
-	var searchResults = [String]()
+	var searchResults = [SearchResult]()
 
 override func viewDidLoad() {
 	super.viewDidLoad()
@@ -27,10 +27,16 @@ override func viewDidLoad() {
 //handle user input in search box
 extension FlickrSearchViewController: UISearchBarDelegate {
 	func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-		searchResults = [String]()
+		
+		searchResults = [SearchResult]()
 		
 		for i in 0...2 {
-		 searchResults.append(String(format: "Fake Result %d for %@", i, searchBar.text!))
+		 
+		 let searchResult = SearchResult()
+		 searchResult.name = String(format: "Fake Result %d for", i)
+		 searchResult.artistName = searchBar.text!
+		 searchResults.append(searchResult)
+		 
 		}
 	
 	tableView.reloadData()
@@ -54,9 +60,11 @@ extension FlickrSearchViewController: UITableViewDelegate {
    var cell: UITableViewCell! =
    			tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
 	if cell == nil {
-		cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
+		cell = UITableViewCell(style: .Subtitle, reuseIdentifier: cellIdentifier)
 	}
-	cell.textLabel!.text = searchResults[indexPath.row]
+	let searchResult = searchResults[indexPath.row]
+	cell.textLabel?.text = searchResult.name
+	cell.detailTextLabel?.text = searchResult.artistName
    
    return cell
 
