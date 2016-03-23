@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D536E3C31C99876F0045F42F /* Flickr.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536E3C21C99876F0045F42F /* Flickr.swift */; };
-		D536E4031C9ACAA00045F42F /* FlickrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536E4021C9ACAA00045F42F /* FlickrViewController.swift */; };
+		D536E4031C9ACAA00045F42F /* FlickrSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D536E4021C9ACAA00045F42F /* FlickrSearchViewController.swift */; };
 		D555D72E1C83967B00CFFD0D /* MemedImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D555D72D1C83967B00CFFD0D /* MemedImageTableViewCell.xib */; };
 		D555D7301C83999E00CFFD0D /* MemedImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D555D72F1C83999E00CFFD0D /* MemedImageTableViewCell.swift */; };
 		D562BA7E1C8C911600CA2FC6 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D562BA7D1C8C911600CA2FC6 /* MyTabBarController.swift */; };
@@ -53,7 +53,7 @@
 
 /* Begin PBXFileReference section */
 		D536E3C21C99876F0045F42F /* Flickr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flickr.swift; sourceTree = "<group>"; };
-		D536E4021C9ACAA00045F42F /* FlickrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrViewController.swift; sourceTree = "<group>"; };
+		D536E4021C9ACAA00045F42F /* FlickrSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrSearchViewController.swift; sourceTree = "<group>"; };
 		D555D72D1C83967B00CFFD0D /* MemedImageTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MemedImageTableViewCell.xib; sourceTree = "<group>"; };
 		D555D72F1C83999E00CFFD0D /* MemedImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemedImageTableViewCell.swift; sourceTree = "<group>"; };
 		D562BA7D1C8C911600CA2FC6 /* MyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				D536E3C21C99876F0045F42F /* Flickr.swift */,
-				D536E4021C9ACAA00045F42F /* FlickrViewController.swift */,
+				D536E4021C9ACAA00045F42F /* FlickrSearchViewController.swift */,
 				D582BC601C8485C600D53F1A /* Functions.swift */,
 				D571E8461C8905B6001BE280 /* HudView.swift */,
 				D5D676C71C7BA3380046638C /* Meme.swift */,
@@ -328,7 +328,7 @@
 				D5D676961C7B728A0046638C /* AppDelegate.swift in Sources */,
 				D5D676C81C7BA3380046638C /* Meme.swift in Sources */,
 				D571E8471C8905B6001BE280 /* HudView.swift in Sources */,
-				D536E4031C9ACAA00045F42F /* FlickrViewController.swift in Sources */,
+				D536E4031C9ACAA00045F42F /* FlickrSearchViewController.swift in Sources */,
 				D582BC611C8485C600D53F1A /* Functions.swift in Sources */,
 				D562BA7E1C8C911600CA2FC6 /* MyTabBarController.swift in Sources */,
 			);

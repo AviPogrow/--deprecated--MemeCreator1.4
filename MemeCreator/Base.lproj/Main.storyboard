@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="-2450" y="-913"/>
         </scene>
-        <!--View Controller-->
+        <!--Flickr Search View Controller-->
         <scene sceneID="dvn-gP-bLF">
             <objects>
-                <viewController id="4Df-64-QoI" sceneMemberID="viewController">
+                <viewController id="4Df-64-QoI" customClass="FlickrSearchViewController" customModule="MemeCreator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5rg-AW-Vcv"/>
                         <viewControllerLayoutGuide type="bottom" id="aIO-ep-T2Q"/>
@@ -120,25 +120,38 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jj2-Nh-EJi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableFooterView" contentMode="redraw" id="CIn-RJ-qgT">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Df-64-QoI" id="e2n-Js-cc5"/>
+                                    <outlet property="delegate" destination="4Df-64-QoI" id="Nwg-MT-jn9"/>
+                                </connections>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="CIn-RJ-qgT">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="4Df-64-QoI" id="n7B-7T-f3l"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jj2-Nh-EJi" firstAttribute="leading" secondItem="bGO-GK-wFm" secondAttribute="leading" id="48J-gr-IHF"/>
-                            <constraint firstItem="aIO-ep-T2Q" firstAttribute="top" secondItem="jj2-Nh-EJi" secondAttribute="bottom" id="GIf-Zm-9Tb"/>
-                            <constraint firstAttribute="trailing" secondItem="jj2-Nh-EJi" secondAttribute="trailing" id="uPp-XB-6YN"/>
-                            <constraint firstItem="jj2-Nh-EJi" firstAttribute="top" secondItem="bGO-GK-wFm" secondAttribute="top" id="uRf-fy-APg"/>
+                            <constraint firstItem="aIO-ep-T2Q" firstAttribute="top" secondItem="jj2-Nh-EJi" secondAttribute="bottom" id="AY5-7K-6UI"/>
+                            <constraint firstAttribute="trailing" secondItem="CIn-RJ-qgT" secondAttribute="trailing" id="FCH-SK-fED"/>
+                            <constraint firstAttribute="trailing" secondItem="jj2-Nh-EJi" secondAttribute="trailing" id="FHo-1T-Zvg"/>
+                            <constraint firstItem="jj2-Nh-EJi" firstAttribute="leading" secondItem="bGO-GK-wFm" secondAttribute="leading" id="Xf6-q8-Dvw"/>
+                            <constraint firstItem="jj2-Nh-EJi" firstAttribute="top" secondItem="bGO-GK-wFm" secondAttribute="top" id="cU4-bV-XyK"/>
+                            <constraint firstItem="CIn-RJ-qgT" firstAttribute="top" secondItem="bGO-GK-wFm" secondAttribute="top" id="wwN-J1-nFh"/>
+                            <constraint firstItem="CIn-RJ-qgT" firstAttribute="leading" secondItem="bGO-GK-wFm" secondAttribute="leading" id="xVJ-LQ-BKO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="CIn-RJ-qgT" id="tgn-EQ-guY"/>
+                        <outlet property="tableView" destination="jj2-Nh-EJi" id="MzA-t1-8H3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJh-cH-zPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2030" y="-913"/>
+            <point key="canvasLocation" x="-2084" y="-925"/>
         </scene>
         <!--Sent Memes Table View Controller-->
         <scene sceneID="Yvl-LK-tYp">
