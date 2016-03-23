@@ -15,6 +15,8 @@ class FlickrSearchViewController : UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 	
 	var searchResults = [SearchResult]()
+	var hasSearched = false
+
 
 override func viewDidLoad() {
 	super.viewDidLoad()
@@ -30,24 +32,44 @@ extension FlickrSearchViewController: UISearchBarDelegate {
 		
 		searchResults = [SearchResult]()
 		
+		hasSearched = true
+		
+		if searchBar.text! != "Justin Bieber" {
+		
 		for i in 0...2 {
 		 
 		 let searchResult = SearchResult()
 		 searchResult.name = String(format: "Fake Result %d for", i)
 		 searchResult.artistName = searchBar.text!
 		 searchResults.append(searchResult)
-		 
-		}
+		 }
+		
+	}
 	
 	tableView.reloadData()
 	}
-   func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
-	return .TopAttached
 	}
-}
+
+	
+	
+   //func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+	//return .TopAttached
+	//}
+
+
 extension FlickrSearchViewController: UITableViewDataSource {
-func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	
+	func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+	
+	if !hasSearched {
+	 return 0
+	
+	} else if searchResults.count == 0 {
+	 return 1
+	} else {
+	
 	return searchResults.count
+	}
 	}
 }
 extension FlickrSearchViewController: UITableViewDelegate {
@@ -62,11 +84,17 @@ extension FlickrSearchViewController: UITableViewDelegate {
 	if cell == nil {
 		cell = UITableViewCell(style: .Subtitle, reuseIdentifier: cellIdentifier)
 	}
+	if searchResults.count == 0 {
+	 cell.textLabel?.text = "(Nothing Found)"
+	 cell.detailTextLabel?.text = ""
+	 } else {
+	
+	
 	let searchResult = searchResults[indexPath.row]
 	cell.textLabel?.text = searchResult.name
 	cell.detailTextLabel?.text = searchResult.artistName
-   
-   return cell
+   	}
+   	return cell
 
 	}
 }
