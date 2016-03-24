@@ -55,6 +55,8 @@ extension FlickrSearchViewController: UISearchBarDelegate {
 		if let dictionary = parseJSON(jsonString) {
 		  print("Dictionary \(dictionary)")
 		 
+		 parseDictionary(dictionary)
+		 
 		 tableView.reloadData()
 		 return
 		}
@@ -159,6 +161,30 @@ extension FlickrSearchViewController {
 				return nil
 			}
 		}
+	func parseDictionary(dictionary: [String: AnyObject]) {
+		//1
+		guard let array = dictionary["results"] as? [AnyObject] else {
+			print("Expected results array")
+		 return
+		}
+		//2
+		for resultDict in array {
+		 //3
+		 if let resultDict = resultDict as? [String: AnyObject] {
+		   //4
+		   if let wrapperType = resultDict["wrapperType"] as? String,
+		   	let kind = resultDict["kind"] as? String {
+				print("wrapperType: \(wrapperType), kind: \(kind)")
+				}
+	  		}
+		}
+	}
+	
+	
+	
+	
+	
+	
 	func showNetworkError() {
 		let alert = UIAlertController(
 			title: "whoops", message: "There was an error reading from the itunes store",
