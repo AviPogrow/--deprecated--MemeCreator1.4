@@ -16,6 +16,8 @@
 		D562BA821C8CFECE00CA2FC6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D562BA811C8CFECD00CA2FC6 /* Launch Screen.storyboard */; };
 		D56853061C8670A600E32A9A /* MemeProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853051C8670A600E32A9A /* MemeProperties.swift */; };
 		D56EEBB61CA2B0A700A0A7FF /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56EEBB51CA2B0A700A0A7FF /* SearchResult.swift */; };
+		D56EEBB81CA2D3B400A0A7FF /* FlickrResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D56EEBB71CA2D3B400A0A7FF /* FlickrResultCell.xib */; };
+		D56EEBBA1CA2D60200A0A7FF /* FlickrResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56EEBB91CA2D60200A0A7FF /* FlickrResultCell.swift */; };
 		D571E8471C8905B6001BE280 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D571E8461C8905B6001BE280 /* HudView.swift */; };
 		D582BC611C8485C600D53F1A /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D582BC601C8485C600D53F1A /* Functions.swift */; };
 		D5D676961C7B728A0046638C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D676951C7B728A0046638C /* AppDelegate.swift */; };
@@ -62,6 +64,8 @@
 		D562BA811C8CFECD00CA2FC6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D56853051C8670A600E32A9A /* MemeProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeProperties.swift; sourceTree = "<group>"; };
 		D56EEBB51CA2B0A700A0A7FF /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		D56EEBB71CA2D3B400A0A7FF /* FlickrResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlickrResultCell.xib; sourceTree = "<group>"; };
+		D56EEBB91CA2D60200A0A7FF /* FlickrResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrResultCell.swift; path = ../FlickrResultCell.swift; sourceTree = "<group>"; };
 		D571E8461C8905B6001BE280 /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		D582BC601C8485C600D53F1A /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		D5D676921C7B728A0046638C /* MemeCreator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemeCreator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +139,8 @@
 		D5D676941C7B728A0046638C /* MemeCreator */ = {
 			isa = PBXGroup;
 			children = (
+				D56EEBB91CA2D60200A0A7FF /* FlickrResultCell.swift */,
+				D56EEBB71CA2D3B400A0A7FF /* FlickrResultCell.xib */,
 				D56EEBB51CA2B0A700A0A7FF /* SearchResult.swift */,
 				D536E3C21C99876F0045F42F /* Flickr.swift */,
 				D536E4021C9ACAA00045F42F /* FlickrSearchViewController.swift */,
@@ -288,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5D6769D1C7B728B0046638C /* Assets.xcassets in Resources */,
+				D56EEBB81CA2D3B400A0A7FF /* FlickrResultCell.xib in Resources */,
 				D555D72E1C83967B00CFFD0D /* MemedImageTableViewCell.xib in Resources */,
 				D5E160481CA03A79009E8551 /* seed.json in Resources */,
 				D562BA821C8CFECE00CA2FC6 /* Launch Screen.storyboard in Resources */,
@@ -319,6 +326,7 @@
 				D5D676CE1C7BE7E10046638C /* MemeEditorViewController.swift in Sources */,
 				D562BA801C8C91CF00CA2FC6 /* MyNavigationController.swift in Sources */,
 				D5D676D01C7CDF330046638C /* CoreDataStackManager.swift in Sources */,
+				D56EEBBA1CA2D60200A0A7FF /* FlickrResultCell.swift in Sources */,
 				D5D676D51C7CF4450046638C /* MemeImageCache.swift in Sources */,
 				D5D676C41C7B768E0046638C /* SentMemesTableViewController.swift in Sources */,
 				D5D676C61C7B76B80046638C /* SentMemesCollectionViewController.swift in Sources */,
