@@ -23,7 +23,7 @@ override func viewDidLoad() {
 	
 	tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
 	
-	let cellNib = UINib(nibName: "SearchResultCell", bundle: nil)
+	let cellNib = UINib(nibName: "FlickrResultCell", bundle: nil)
 	tableView.registerNib(cellNib, forCellReuseIdentifier: "FlickrResultCell")
 }
 
@@ -80,7 +80,7 @@ extension FlickrSearchViewController: UITableViewDelegate {
 					cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 					
    
-   let cellIdentifier = "SearchResultCell"
+   let cellIdentifier = "FlickrResultCell"
    
    var cell: UITableViewCell! =
    			tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
@@ -88,7 +88,7 @@ extension FlickrSearchViewController: UITableViewDelegate {
 	
 	if searchResults.count == 0 {
 	 //cell.flickrImageView = UIImage(named:"placeholder")
-	 cell.textLabel!.text = "placeHolder"
+	 cell.textLabel!.text = "no results"
 	 } else {
 	
 	
