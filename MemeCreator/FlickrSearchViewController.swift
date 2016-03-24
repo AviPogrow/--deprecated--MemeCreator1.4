@@ -28,6 +28,9 @@ override func viewDidLoad() {
 	
 	cellNib = UINib(nibName: "NothingFoundCell", bundle: nil)
 	tableView.registerNib(cellNib, forCellReuseIdentifier: "NothingFoundCell")
+
+	searchBar.becomeFirstResponder()
+
 }
 
 
@@ -57,10 +60,10 @@ extension FlickrSearchViewController: UISearchBarDelegate {
 	}
 
 	
-	
-   //func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
-	//return .TopAttached
-	//}
+   //TODO: fix color of status Bar and position of searchbar
+   func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+	return .TopAttached
+	}
 
 
 extension FlickrSearchViewController: UITableViewDataSource {
