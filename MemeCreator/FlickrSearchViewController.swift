@@ -37,34 +37,37 @@ override func viewDidLoad() {
 }
 //handle user input in search box
 extension FlickrSearchViewController: UISearchBarDelegate {
+	
 	func searchBarSearchButtonClicked(searchBar: UISearchBar) {
 		
-		
 		if !searchBar.text!.isEmpty  {
-		searchBar.resignFirstResponder()
+			searchBar.resignFirstResponder()
 		
-		hasSearched = true
+			hasSearched = true
 		
-		searchResults = [SearchResult]()
+			searchResults = [SearchResult]()
 		
-		let url = urlWithSearchText(searchBar.text!)
+			let url = urlWithSearchText(searchBar.text!)
+			
 		
-		
-		if let jsonString = performStoreRequestWithURL(url) {
+			if let jsonString = performStoreRequestWithURL(url) {
 		 
-		if let dictionary = parseJSON(jsonString) {
-		  print("Dictionary \(dictionary)")
+			if let dictionary = parseJSON(jsonString) {
+		 		 print("Dictionary \(dictionary)")
 		 
-		 parseDictionary(dictionary)
+		 		parseDictionary(dictionary)
 		 
-		 tableView.reloadData()
-		 return
+		 		tableView.reloadData()
+		 		return
+			}
 		}
+		
+		
+		}
+		//showNetworkError()
 	}
-		showNetworkError()
-		}
- 	}
 }
+
    //TODO: fix color of status Bar and position of searchbar
    //func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
 	//return .TopAttached
@@ -90,9 +93,16 @@ extension FlickrSearchViewController: UITableViewDelegate {
    func tableView(tableView: UITableView,
 					cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 					
-	 if searchResults.count == 0 {
+	
+	 print("the number of searchResults is \(searchResults.count)")
+	  
+	    if searchResults.count == 0 {
 	 
-	 return tableView.dequeueReusableCellWithIdentifier("NothingFoundCell", forIndexPath: indexPath)
+	 let cellIdentifier = "NothingFoundCell"
+	 
+	 var cell: UITableViewCell! =
+	 		tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+	 																	as! NothingFoundCell
 	 
 	 //cell.flickrImageView = UIImage(named:"placeholder")
 	 //cell.textLabel!.text = "no results"
@@ -101,15 +111,17 @@ extension FlickrSearchViewController: UITableViewDelegate {
 	
 	 let cellIdentifier = "FlickrResultCell"
    
-   	var cell: UITableViewCell! =
+   		var cell: UITableViewCell! =
    			tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
 																		as! FlickrResultCell
 	
 	let searchResult = searchResults[indexPath.row]
-	cell.textLabel?.text = searchResult.name
-	cell.detailTextLabel?.text = searchResult.artistName
+	//cell.textLabel?.text = searchResult.name
+	//cell.detailTextLabel?.text = searchResult.artistName
+	cell.flickrImageView.image = searchResult.artworkURL60
 		
-   	return cell
+	cell.textLabel?.text = searchResult.artistName
+	return cell
 
 	}
 	
@@ -161,45 +173,65 @@ extension FlickrSearchViewController {
 				return nil
 			}
 		}
+		func parseTrack(dictionary: [String: AnyObject]) -> SearchResult {
+		
+		let searchResult = SearchResult()
+		
+		searchResult.name = dictionary["trackName"] as! String
+		searchResult.artistName = dictionary["artistName"] as! String
+		searchResult.artworkURL60 = dictionary["artworkUrl60"] as! String
+		searchResult.artworkURL100 = dictionary["artworkUrl100"] as! String
+		
+	    return searchResult
+	}
+	
 	func parseDictionary(dictionary: [String: AnyObject]) {
 		//1
-		guard let array = dictionary["results"] as? [AnyObject] else {
+		guard let array =  dictionary["results"] as? [AnyObject] else {
 			print("Expected results array")
+		 
 		 return
+		 
 		}
+		
+		var searchResults = [SearchResult]()
+		
 		//2
 		for resultDict in array {
 		 //3
 		 if let resultDict = resultDict as? [String: AnyObject] {
 		   //4
-		   if let wrapperType = resultDict["wrapperType"] as? String,
-		   	let kind = resultDict["kind"] as? String {
-				print("wrapperType: \(wrapperType), kind: \(kind)")
+			
+			var searchResult:SearchResult?
+			
+		   if let wrapperType = resultDict["wrapperType"] as? String {
+		   	 switch wrapperType {
+				case "track":
+					searchResult = parseTrack(resultDict)
+				default:
+					break
 				}
+			}
+				
+			
+			if let result = searchResult {
+			  searchResults.append(result)
 	  		}
 		}
-	}
-	
-	
-	
-	
-	
+
 	
 	func showNetworkError() {
-		let alert = UIAlertController(
-			title: "whoops", message: "There was an error reading from the itunes store",
-			 preferredStyle: .Alert)
+		let alert = UIAlertController(title: "whoops", message:
+				"There was an error reading from the itunes store", preferredStyle: .Alert)
 		
 		let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
 		alert.addAction(action)
 		
 		presentViewController(alert, animated: true, completion: nil)
-	 }
-
-
+			 }
+		}
+	}
 }
-
-
 
 
 
