@@ -39,31 +39,32 @@ override func viewDidLoad() {
 extension FlickrSearchViewController: UISearchBarDelegate {
 	func searchBarSearchButtonClicked(searchBar: UISearchBar) {
 		
-		searchResults = [SearchResult]()
+		
+		if !searchBar.text!.isEmpty  {
+		searchBar.resignFirstResponder()
 		
 		hasSearched = true
 		
-		if searchBar.text! != "Justin Bieber" {
+		searchResults = [SearchResult]()
 		
-		for i in 0...2 {
-		 
-		 let searchResult = SearchResult()
-		 searchResult.name = String(format: "Fake Result %d for", i)
-		 searchResult.artistName = searchBar.text!
-		 searchResults.append(searchResult)
-		 }
+		let url = urlWithSearchText(searchBar.text!)
 		
+		
+		print("URL: \(url)")
+		
+		if let jsonString = performStoreRequestWithURL(url) {
+		  print("received JSON string \(jsonString)")
+		}
+		
+		tableView.reloadData()
+		}
 	}
-	
-	tableView.reloadData()
-	}
-	}
-
+ }
 	
    //TODO: fix color of status Bar and position of searchbar
-   func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
-	return .TopAttached
-	}
+   //func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+	//return .TopAttached
+	//}
 
 
 extension FlickrSearchViewController: UITableViewDataSource {
@@ -85,10 +86,7 @@ extension FlickrSearchViewController: UITableViewDelegate {
    func tableView(tableView: UITableView,
 					cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 					
-   
-  
-	
-	if searchResults.count == 0 {
+	 if searchResults.count == 0 {
 	 
 	 return tableView.dequeueReusableCellWithIdentifier("NothingFoundCell", forIndexPath: indexPath)
 	 
@@ -117,9 +115,6 @@ extension FlickrSearchViewController: UITableViewDelegate {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 	}
 	
-	
-	
-	
 	func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
 		if searchResults.count == 0 {
 			return nil
@@ -128,7 +123,32 @@ extension FlickrSearchViewController: UITableViewDelegate {
 		}
 	}
 }
+extension FlickrSearchViewController {
 
+	func urlWithSearchText(searchText:String) -> NSURL  {
+		
+		let escapedSearchText =
+	searchText.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+		
+		
+		let urlString = String(format: "https://itunes.apple.com/search?term=%@", escapedSearchText)
+		
+		let url = NSURL(string: urlString)
+		return url!
+	
+	}
+	func performStoreRequestWithURL(url:NSURL) -> String? {
+		do {
+			return try String(contentsOfURL: url, encoding: NSUTF8StringEncoding)
+			} catch {
+				print("Download Error: \(error)")
+				return nil
+		}
+	}
+	
+
+
+}
 
 
 
