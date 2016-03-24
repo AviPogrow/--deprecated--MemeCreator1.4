@@ -54,13 +54,16 @@ extension FlickrSearchViewController: UISearchBarDelegate {
 		
 		if let jsonString = performStoreRequestWithURL(url) {
 		  print("received JSON string \(jsonString)")
+		
+		if let dictionary = parseJSON(jsonString) {
+		  print("Dictionary \(dictionary)")
 		}
 		
 		tableView.reloadData()
 		}
 	}
  }
-	
+}
    //TODO: fix color of status Bar and position of searchbar
    //func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
 	//return .TopAttached
@@ -145,6 +148,18 @@ extension FlickrSearchViewController {
 				return nil
 		}
 	}
+	func parseJSON(jsonString:String) -> [String: AnyObject]? {
+		guard let data = jsonString.dataUsingEncoding(NSUTF8StringEncoding)
+			else { return nil }
+		
+			do {
+				return try NSJSONSerialization.JSONObjectWithData(data, options: []) as? [String: AnyObject]
+			
+			} catch {
+				print("JSON Error: \(error)")
+				return nil
+			}
+		}
 	
 
 
