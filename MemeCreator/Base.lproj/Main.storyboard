@@ -126,7 +126,7 @@
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="CIn-RJ-qgT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="4Df-64-QoI" id="n7B-7T-f3l"/>
@@ -135,13 +135,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aIO-ep-T2Q" firstAttribute="top" secondItem="jj2-Nh-EJi" secondAttribute="bottom" id="AY5-7K-6UI"/>
-                            <constraint firstAttribute="trailing" secondItem="CIn-RJ-qgT" secondAttribute="trailing" id="FCH-SK-fED"/>
-                            <constraint firstAttribute="trailing" secondItem="jj2-Nh-EJi" secondAttribute="trailing" id="FHo-1T-Zvg"/>
-                            <constraint firstItem="jj2-Nh-EJi" firstAttribute="leading" secondItem="bGO-GK-wFm" secondAttribute="leading" id="Xf6-q8-Dvw"/>
-                            <constraint firstItem="jj2-Nh-EJi" firstAttribute="top" secondItem="bGO-GK-wFm" secondAttribute="top" id="cU4-bV-XyK"/>
-                            <constraint firstItem="CIn-RJ-qgT" firstAttribute="top" secondItem="bGO-GK-wFm" secondAttribute="top" id="wwN-J1-nFh"/>
-                            <constraint firstItem="CIn-RJ-qgT" firstAttribute="leading" secondItem="bGO-GK-wFm" secondAttribute="leading" id="xVJ-LQ-BKO"/>
+                            <constraint firstItem="CIn-RJ-qgT" firstAttribute="top" secondItem="5rg-AW-Vcv" secondAttribute="bottom" id="0pe-JP-Dbg"/>
+                            <constraint firstItem="CIn-RJ-qgT" firstAttribute="trailing" secondItem="jj2-Nh-EJi" secondAttribute="trailing" id="4pC-jZ-dKs"/>
+                            <constraint firstItem="CIn-RJ-qgT" firstAttribute="leading" secondItem="jj2-Nh-EJi" secondAttribute="leading" id="52v-UP-XEq"/>
+                            <constraint firstItem="jj2-Nh-EJi" firstAttribute="bottom" secondItem="aIO-ep-T2Q" secondAttribute="top" id="IZh-JA-30e"/>
+                            <constraint firstAttribute="trailing" secondItem="CIn-RJ-qgT" secondAttribute="trailing" id="KxF-bV-3oO"/>
+                            <constraint firstItem="CIn-RJ-qgT" firstAttribute="leading" secondItem="bGO-GK-wFm" secondAttribute="leading" id="clL-jh-9eq"/>
+                            <constraint firstItem="jj2-Nh-EJi" firstAttribute="top" secondItem="bGO-GK-wFm" secondAttribute="top" id="dlZ-Vq-H8E"/>
                         </constraints>
                     </view>
                     <connections>

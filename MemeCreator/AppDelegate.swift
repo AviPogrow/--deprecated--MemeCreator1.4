@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		
 		
-		UISearchBar.appearance().barTintColor = UIColor.blackColor()
+		UISearchBar.appearance().barTintColor = barTintColor2
 		
 		
 		

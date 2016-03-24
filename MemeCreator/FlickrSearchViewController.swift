@@ -33,6 +33,14 @@ override func viewDidLoad() {
 
 }
 
+ //TODO: fix color of status Bar and position of searchbar
+   func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+	return .TopAttached
+	}
+
+
+
+
 
 }
 //handle user input in search box
@@ -68,10 +76,7 @@ extension FlickrSearchViewController: UISearchBarDelegate {
 	}
 }
 
-   //TODO: fix color of status Bar and position of searchbar
-   //func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
-	//return .TopAttached
-	//}
+
 
 
 extension FlickrSearchViewController: UITableViewDataSource {
@@ -102,10 +107,12 @@ extension FlickrSearchViewController: UITableViewDelegate {
 	 
 	 var cell: UITableViewCell! =
 	 		tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
-	 																	as! NothingFoundCell
+	 																	as! UITableViewCell
 	 
 	 //cell.flickrImageView = UIImage(named:"placeholder")
 	 //cell.textLabel!.text = "no results"
+	 return cell
+	 
 	 } else {
 	
 	
@@ -118,13 +125,13 @@ extension FlickrSearchViewController: UITableViewDelegate {
 	let searchResult = searchResults[indexPath.row]
 	//cell.textLabel?.text = searchResult.name
 	//cell.detailTextLabel?.text = searchResult.artistName
-	cell.flickrImageView.image = searchResult.artworkURL60
+	//cell.flickrImageView.image = searchResult.artworkURL60
 		
 	cell.textLabel?.text = searchResult.artistName
-	return cell
-
-	}
 	
+	return cell
+		
+	}
 	}
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
