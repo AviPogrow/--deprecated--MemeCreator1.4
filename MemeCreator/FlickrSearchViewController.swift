@@ -50,19 +50,18 @@ extension FlickrSearchViewController: UISearchBarDelegate {
 		let url = urlWithSearchText(searchBar.text!)
 		
 		
-		print("URL: \(url)")
-		
 		if let jsonString = performStoreRequestWithURL(url) {
-		  print("received JSON string \(jsonString)")
-		
+		 
 		if let dictionary = parseJSON(jsonString) {
 		  print("Dictionary \(dictionary)")
-		}
-		
-		tableView.reloadData()
+		 
+		 tableView.reloadData()
+		 return
 		}
 	}
- }
+		showNetworkError()
+		}
+ 	}
 }
    //TODO: fix color of status Bar and position of searchbar
    //func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
@@ -160,7 +159,16 @@ extension FlickrSearchViewController {
 				return nil
 			}
 		}
-	
+	func showNetworkError() {
+		let alert = UIAlertController(
+			title: "whoops", message: "There was an error reading from the itunes store",
+			 preferredStyle: .Alert)
+		
+		let action = UIAlertAction(title: "OK", style: .Default, handler: nil)
+		alert.addAction(action)
+		
+		presentViewController(alert, animated: true, completion: nil)
+	 }
 
 
 }
