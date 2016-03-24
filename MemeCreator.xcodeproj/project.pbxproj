@@ -14,6 +14,7 @@
 		D562BA7E1C8C911600CA2FC6 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D562BA7D1C8C911600CA2FC6 /* MyTabBarController.swift */; };
 		D562BA801C8C91CF00CA2FC6 /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D562BA7F1C8C91CF00CA2FC6 /* MyNavigationController.swift */; };
 		D562BA821C8CFECE00CA2FC6 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D562BA811C8CFECD00CA2FC6 /* Launch Screen.storyboard */; };
+		D5643A171CA4190F0039FA93 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5643A161CA4190F0039FA93 /* NothingFoundCell.xib */; };
 		D56853061C8670A600E32A9A /* MemeProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853051C8670A600E32A9A /* MemeProperties.swift */; };
 		D56EEBB61CA2B0A700A0A7FF /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56EEBB51CA2B0A700A0A7FF /* SearchResult.swift */; };
 		D56EEBB81CA2D3B400A0A7FF /* FlickrResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D56EEBB71CA2D3B400A0A7FF /* FlickrResultCell.xib */; };
@@ -62,6 +63,7 @@
 		D562BA7D1C8C911600CA2FC6 /* MyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		D562BA7F1C8C91CF00CA2FC6 /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
 		D562BA811C8CFECD00CA2FC6 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D5643A161CA4190F0039FA93 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		D56853051C8670A600E32A9A /* MemeProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeProperties.swift; sourceTree = "<group>"; };
 		D56EEBB51CA2B0A700A0A7FF /* SearchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		D56EEBB71CA2D3B400A0A7FF /* FlickrResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlickrResultCell.xib; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			children = (
 				D56EEBB91CA2D60200A0A7FF /* FlickrResultCell.swift */,
 				D56EEBB71CA2D3B400A0A7FF /* FlickrResultCell.xib */,
+				D5643A161CA4190F0039FA93 /* NothingFoundCell.xib */,
 				D56EEBB51CA2B0A700A0A7FF /* SearchResult.swift */,
 				D536E3C21C99876F0045F42F /* Flickr.swift */,
 				D536E4021C9ACAA00045F42F /* FlickrSearchViewController.swift */,
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5D6769D1C7B728B0046638C /* Assets.xcassets in Resources */,
+				D5643A171CA4190F0039FA93 /* NothingFoundCell.xib in Resources */,
 				D56EEBB81CA2D3B400A0A7FF /* FlickrResultCell.xib in Resources */,
 				D555D72E1C83967B00CFFD0D /* MemedImageTableViewCell.xib in Resources */,
 				D5E160481CA03A79009E8551 /* seed.json in Resources */,

@@ -23,8 +23,11 @@ override func viewDidLoad() {
 	
 	tableView.contentInset = UIEdgeInsets(top: 64, left: 0, bottom: 0, right: 0)
 	
-	let cellNib = UINib(nibName: "FlickrResultCell", bundle: nil)
+	var  cellNib = UINib(nibName: "FlickrResultCell", bundle: nil)
 	tableView.registerNib(cellNib, forCellReuseIdentifier: "FlickrResultCell")
+	
+	cellNib = UINib(nibName: "NothingFoundCell", bundle: nil)
+	tableView.registerNib(cellNib, forCellReuseIdentifier: "NothingFoundCell")
 }
 
 
@@ -80,24 +83,31 @@ extension FlickrSearchViewController: UITableViewDelegate {
 					cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 					
    
-   let cellIdentifier = "FlickrResultCell"
-   
-   var cell: UITableViewCell! =
-   			tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
-																		as! FlickrResultCell
+  
 	
 	if searchResults.count == 0 {
+	 
+	 return tableView.dequeueReusableCellWithIdentifier("NothingFoundCell", forIndexPath: indexPath)
+	 
 	 //cell.flickrImageView = UIImage(named:"placeholder")
-	 cell.textLabel!.text = "no results"
+	 //cell.textLabel!.text = "no results"
 	 } else {
 	
+	
+	 let cellIdentifier = "FlickrResultCell"
+   
+   	var cell: UITableViewCell! =
+   			tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+																		as! FlickrResultCell
 	
 	let searchResult = searchResults[indexPath.row]
 	cell.textLabel?.text = searchResult.name
 	cell.detailTextLabel?.text = searchResult.artistName
-   	}
+		
    	return cell
 
+	}
+	
 	}
 	
 	func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

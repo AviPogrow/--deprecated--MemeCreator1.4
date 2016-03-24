@@ -21,6 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	//customize color of UI components
 	func customizeAppearance() {
+		
+		let barTintColor1 = UIColor(red: 255/255.0, green: 238/255.0,
+		blue: 136/255.0, alpha: 1.0)
+		
+		
+		let barTintColor2 = UIColor(red: 20/255, green: 160/255, blue: 160/255, alpha: 1)
+		
+		
+		//window!.tintColor = UIColor(red: 10/255, green: 80/255, blue: 80/255, alpha: 1)
+		
+		
+		
 		//make nav bar black and its text white
 		UINavigationBar.appearance().barTintColor = UIColor.blackColor()
 		
@@ -30,8 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		UITabBar.appearance().barTintColor = UIColor.blackColor()
 		
-		_ = UIColor(red: 255/255.0, green: 238/255.0,
-		blue: 136/255.0, alpha: 1.0)
+		
+		
+		UISearchBar.appearance().barTintColor = UIColor.blackColor()
+		
+		
+		
+	
 		
 	
 	}
